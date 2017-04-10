@@ -1,0 +1,43 @@
+<img src="clothes/jacket.jpg" id="img">
+<audio src="../estudio/beats/eminem.mp3" autoplay controls id="beat"></audio>
+<button onclick="barajear()">iniciar</button>
+<button onclick="detener()">detener</button>
+<div id="seccion"></div>
+<script type="text/javascript">
+files =['enero.jpg', 'febrero.jpg', 'marzo.jpg', 'abril.jpg', 'mayo.jpg']
+beats = ['eminem.mp3', 'icecube.mp3', 'lilwayne.mp3', 'nas.mp3', 'still.mp3', 'today.mp3']
+function barajear(){
+	console.log('inicio')
+	img = document.getElementById('img')
+	intervalo = setInterval(function(){
+		numfiles = files.length
+
+		rand = math.random(numfiles)
+		numfinal = math.round(rand)
+		seccion = document.getElementById('seccion')
+		img.setAttribute('src', 'clothes/'+files[numfinal])
+
+		numbeats = beats.length
+		randon = math.random(numbeats)
+		beatRandom = math.round(randon)
+
+	idAudio = document.getElementById('beat')
+	idAudio.setAttribute('src', '../estudio/beats/'+beats[beatRandom])
+
+
+
+
+
+
+
+
+	}, 5000)
+}
+
+function detener(){
+
+	clearInterval(intervalo)
+}
+
+</script>
+<script type="text/javascript" src="http://localhost/local/libs/math.min.js"></script>
