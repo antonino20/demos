@@ -1,0 +1,34 @@
+
+<!-- Questo script permette di visualizare un immaggine dopo l'altra
+dopo cinque secondi in modo automatico -->
+<img id="img">
+
+<button onclick="mischiare()">play</button>
+<button onclick="fermare()">stop</button>
+
+<script type="text/javascript">
+	
+/* In questo array venno messi tutti i nomi delle foto */
+foto =[/* Esempio.jpg */];
+
+function mischiare(){
+	
+	intervalo = setInterval(function(){
+		img = document.getElementById('img');
+		numfoto = foto.length;
+
+		rand = math.random(numfoto);
+		fotoRandom = math.round(rand);
+		seccion = document.getElementById('seccion');
+		img.setAttribute('src', foto[fotoRandom]);
+
+
+	}, 5000)
+}
+
+function fermare(){
+
+	clearInterval(intervalo);
+}
+
+</script>
